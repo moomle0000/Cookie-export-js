@@ -15,15 +15,31 @@ create new json file
 
 ```js
 
-const exportcookie = require("../index")
+const cookies = require("../index")
 
 const jsondata = require("./data.json")
 
 
-const data =  exportcookie(jsondata)
+const cookie =  cookies(jsondata)
 
-console.log(data)
+const options = {
+        url: "https://example/search",
+        method: "POST",
+        timeout: 0,
+        headers: {
+            "Content-Type": "application/x-www-form-urlencoded",
+            // "Authorization": "Bearer " + apiKey,
+            'user-agent': 'Mozilla/5.0',
+            'Cookie':cookie
+        },
+        data:{
+            anydata: "ww",
+        }
+      
+    };
 
+
+    const response = await axios.request(options);
 
 ```
 
