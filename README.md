@@ -20,7 +20,7 @@ const exportcookie = require("../index")
 const jsondata = require("./data.json")
 
 
-const data =  exportcookie(jjj)
+const data =  exportcookie(jsondata)
 
 console.log(data)
 
